@@ -2,7 +2,8 @@
 let p = document.createElement("p");
 let h1 = document.querySelector(".header");
 let input = document.querySelector(".input");
-let userInput;
+let message =  document.querySelector(".message");
+let userInput = "";
 
 //declare variable for ghost image
 let ghostImg = document.querySelector(".ghost-image");
@@ -34,23 +35,22 @@ updateImgButton.onclick = (function (){
 
 //create an onclick event for the Send Message button
 messageButton.onclick = (function (){  
-    ghostImg.insertAdjacentHTML("beforeend", `<p>You said: "Boo!"</p> <br> <p>Ghost said: "That's cliche!"</p>`);
+    message.insertAdjacentHTML("beforeend", `<p>You said: "Boo!"</p> <p>Ghost said: "That's cliche!"</p>`);
 });
 
 //update the userInput variable by saving the value of the input
-userInput = input.value;
+//userInput = input.value;
+//console.log(userInput);
 
 //use the insertAdjacentHTML method to append the userInput in a <p> tag
-p.insertAdjacentHTMl('beforeend', userInput);
 
 
 //create an onclick event for the Name Me button
-nameButton.onclick = (function (){  
-    
+nameButton.onclick = (function (){
+  userInput = input.value;
+  h1.innerHTML = userInput;
 });
 
 //update the userInput variable by saving the value of the input
 
 
-//use the innerHTML method to update the h1 tag
-h1.innerHTML = ""
